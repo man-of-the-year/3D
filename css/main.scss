@@ -1,0 +1,126 @@
+@import "style_null.scss";
+
+$index: calc(1.8vw + 1.8vh);
+$gatter: 30px;
+$size-small: 26;
+$size-big: 36;
+$depth: 4000px;
+$transition: .75s cubic-bezier(.075, .5, 0, 1);
+
+@font-face {
+  font-family: 'raleway_c';
+  src: url(/ready-html/fonts/raleway-v22-cyrillic-300.woff2);
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'raleway_c';
+  src: url(/ready-html/fonts/raleway-v22-cyrillic-100.woff2);
+  font-weight: 100;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 100;
+  text-transform: uppercase;
+  width: min-content;
+  line-height: 1;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-size: $index;
+  font-family: raleway_c, sans-serif;
+  height: $depth;
+  font-weight: 300;
+}
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  perspective: 1500px;
+}
+.gallery {
+  transform-style: preserve-3d;
+  height: 100%;
+}
+.frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: $transition ,opacity .75s ease;
+  will-change: transform;
+  transform-style: preserve-3d;
+
+  & h2 {
+    text-align: center;
+    font-size: calc((1vw + 1vh)*3.3);
+  }
+
+  &-media {
+    position: relative;
+    width: calc((1vw + 1vh)*(26));
+    height: calc((1vw + 1vh)*(36));
+    background-position: center;
+    background-size: cover;
+  }
+  &_bg {
+    background-color: rgba($color: #000000, $alpha: .8);
+  }
+}
+
+.frame-media_left {
+  right: calc(calc(26/1.2) * calc(1vw+1vh) + 30px);
+}
+.frame-media_right {
+  left: calc(calc(26/1.2) * calc(1vw+1vh) + 30px);
+}
+video.frame-media_left {
+  right: calc(calc(36/1.2) * calc(1vw+1vh) + 30px);
+}
+video.frame-media_right {
+  left: calc(calc(36/1.2) * calc(1vw+1vh) + 30px);
+}
+
+video.frame-media {
+  width: calc((1vw + 1vh)*(36));
+  height: calc((1vw + 1vh)*(26));  
+}
+
+.text-right > * {
+  position: relative;
+  left: 18vw;
+}
+
+.text-left > * {
+  position: relative;
+  right: 18vw;
+}
+
+.frame h3 {
+  font-size: calc(calc(1vw+1vh) * 4);
+}
+.frame p {
+  max-width: 30vw;
+  margin-top: 5vh;
+  font-size: calc(calc(1vw+1vh));
+  line-height: 1.8;
+}
+
+.soundBtn {
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  cursor: pointer;
+  width: 24px;
+  transition: .25s ease;
+}
+
+.soundBtn.paused {
+  transition: .25s ease;
+  opacity: .25;
+}
