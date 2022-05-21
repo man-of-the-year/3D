@@ -73,13 +73,13 @@ h1, h2, h3, h4, h5, h6 {
 
 @font-face {
   font-family: 'raleway_c';
-  src: url(/ready-html/fonts/raleway-v22-cyrillic-300.woff2);
+  src: url(fonts/raleway-v22-cyrillic-300.woff2);
   font-weight: 300;
 }
 
 @font-face {
   font-family: 'raleway_c';
-  src: url(/ready-html/fonts/raleway-v22-cyrillic-100.woff2);
+  src: url(fonts/raleway-v22-cyrillic-100.woff2);
   font-weight: 100;
 }
 
